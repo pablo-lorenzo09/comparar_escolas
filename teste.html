@@ -1,0 +1,23 @@
+<h2 class="relatorio__titulo">Análise Comparativa</h2>
+
+      <p class="relatorio__veredito"></p>
+
+      <div class="relatorio__detalhes">
+        <p class="relatorio__linha relatorio__linha--a"></p>
+        <p class="relatorio__linha relatorio__linha--b"></p>
+      </div>
+
+
+function compararEscolas (){
+
+  document.querySelector('.relatorio--oculto').style.display= 'flex'
+  if (escolaA.qtdeCursos > escolaB.qtdeCursos) {
+    document.querySelector('.relatorio__veredito').innerText = `Veredito ${escolaA.cidade} lidera com ${escolaA.qtdeCursos}`;
+  } else if (escolaB.qtdeCursos > escolaA.qtdeCursos) {
+    document.querySelector('.relatorio__veredito').innerText = `Veredito ${escolaB.cidade} lidera com ${escolaB.qtdeCursos}`;
+  } else {
+      document.querySelector('.relatorio__veredito').innerText = `Veredito: Ambas as unidades possuem a mesma quantidade de cursos.`;
+  }
+  document.querySelector('.relatorio__veredito').innerText = `Unidade A: código: ${escolaA.codigo} cidade: ${escolaA.cidade} ${escolaA.qtdeCursos}`;
+}
+  
