@@ -42,27 +42,51 @@ let qtdeCursosB = document.querySelectorAll('.unidade__input unidadeB__cursos');
 
 /* ===== FUNÇÃO DE VALIDAÇÃO ===== */
 
+// if (codigoA == '' || cidadeA == '' || anoConstrucaoA == '' || qtdeCursosA == ''){
+//   document.querySelector('.unidadeA__mensagem').innerText = 'Preencha todos os campos para criar a escola.';
+
+// } else if (codigoB == '' || cidadeB == '' || anoConstrucaoB == '' || qtdeCursosB == ''){
+//   document.querySelector('.unidadeB__mensagem').innerText = 'Preencha todos os campos para criar a escola.';
+
+// }else{
+//   instanciarEscolaA
+// }
+
 
 /* ===== INSTANCIAR ESCOLA A ===== */
 
 const escolaA = new Senai (codigoA, cidadeA, anoConstrucaoA, qtdeCursosA);
 function instanciarEscolaA(){
-  document.querySelector('.unidadeA__mensagem').innerText = 'Fechada: Atividades encerradas.';
+  document.querySelector('.unidadeA__mensagem').innerText = `A Unidade SENAI de ${escolaA.cidade} foi criada.`;
   
 }
 // FAZENDO FUNCAO BOTAO
 const InstanciarAButton = document.querySelector('.unidade__botao.unidadeA__instanciar')
 InstanciarAButton.addEventListener('click', instanciarEscolaA);
 
+
 /* ===== INSTANCIAR ESCOLA B ===== */
 const escolaB = new Senai (codigoB, cidadeB, anoConstrucaoB, qtdeCursosB);
+
 function instanciarEscolaB(){
-  document.querySelector('.unidadeB__mensagem').innerText = 'Fechada: Atividades encerradas.';
+  document.querySelector('.unidadeB__mensagem').innerText = `A Unidade SENAI de ${escolaB.cidade} foi criada.`;
 }
 // FAZENDO FUNÇAO DO BOTAO
 const InstanciarBButton = document.querySelector('.unidade__botao.unidadeB__instanciar');
 InstanciarBButton.addEventListener('click', instanciarEscolaB);
 
+// FAZENDO FUNCAO DOs BOToes ABRIR 
+const abrirButtonA = document.querySelector('.botao.botao--abrir.unidadeA__abrir');
+abrirButtonA.addEventListener('click', abrirEscolaA);
+
+const abrirButtonB = document.querySelector('.botao.botao--abrir.unidadeB__abrir');
+abrirButtonB.addEventListener('click', abrirEscolaB);
+// FAZENDO FUNCAO DOs BOToes FECHAR 
+const fecharButtonA = document.querySelector('.botao.botao--fechar.unidadeA__fechar');
+fecharButtonA.addEventListener('click', fecharEscolaA);
+
+const fecharButtonB = document.querySelector('.botao.botao--fechar.unidadeB__fechar');
+fecharButtonB.addEventListener('click', fecharEscolaB);
 
 
 /* ===== ABRIR ESCOLA ===== */
@@ -71,14 +95,14 @@ function abrirEscolaA (){
   document.querySelector('.unidadeA__mensagem').innerText = `Aberta: Bem-vindos ao SENAI ${escolaA.cidade}.`;
 }
 
+
 function abrirEscolaB (){
   escolaB.abrirEscola
-  document.querySelector('.unidadeA__mensagem').innerText = `Aberta: Bem-vindos ao SENAI ${escolaB.cidade}.`;
+  document.querySelector('.unidadeB__mensagem').innerText = `Aberta: Bem-vindos ao SENAI ${escolaB.cidade}.`;
 }
 /* ===== FECHAR ESCOLA ===== */
 function fecharEscolaA (){
   escolaA.fecharEscola
-  escolaA.
   document.querySelector('.unidadeA__mensagem').innerText = 'Fechada: Atividades encerradas.';
 }
 
