@@ -124,7 +124,7 @@ function compararEscolas (){
   } else {
       document.querySelector('.relatorio__veredito').innerText = `Veredito: Ambas as unidades possuem a mesma quantidade de cursos.`;
   }
-  document.querySelector('.relatorio__veredito').innerText = `Unidade A: código: ${escolaA.codigo} cidade: ${escolaA.cidade} ${escolaA.qtdeCursos}`;
+  document.querySelector('.relatorio__linha--a').innerText = `Unidade A: código: ${escolaA.codigo} cidade: ${escolaA.cidade} ${escolaA.qtdeCursos}`;
 }
   
 document.querySelector('.sistema__comparar').addEventListener('click', compararEscolas);
