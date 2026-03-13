@@ -50,18 +50,20 @@ function instanciarEscolaA(){
   document.querySelector('.unidadeA__mensagem').innerText = 'Fechada: Atividades encerradas.';
   
 }
-const InstanciarAButton = document.querySelector('.unidade__botao unidadeA__instanciar')
+// FAZENDO FUNCAO BOTAO
+const InstanciarAButton = document.querySelector('.unidade__botao.unidadeA__instanciar')
 InstanciarAButton.addEventListener('click', instanciarEscolaA);
 
 /* ===== INSTANCIAR ESCOLA B ===== */
 const escolaB = new Senai (codigoB, cidadeB, anoConstrucaoB, qtdeCursosB);
 function instanciarEscolaB(){
   document.querySelector('.unidadeB__mensagem').innerText = 'Fechada: Atividades encerradas.';
+}
 // FAZENDO FUNÇAO DO BOTAO
-const InstanciarBButton = document.querySelector('.unidade__botao unidadeB__instanciar');
+const InstanciarBButton = document.querySelector('.unidade__botao.unidadeB__instanciar');
 InstanciarBButton.addEventListener('click', instanciarEscolaB);
 
-}
+
 
 /* ===== ABRIR ESCOLA ===== */
 function abrirEscolaA (){
